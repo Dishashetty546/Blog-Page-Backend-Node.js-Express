@@ -1,0 +1,31 @@
+<div class="author">
+    <h1 class="author_heading">Karan Roushan</h1>
+    <p class="author_body">Software Engineer and Digital Artist</p>
+</div>
+
+
+<img src="/img/book_img.webp" alt="netflix" class="blog_image" width="981" height="528">
+
+<section class="articles">
+    <h2 class="article_heading">latest</h2>
+
+    <ul class="article-list">
+
+        <% data.forEach(post => { %>
+         
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+
+        <% }) %>
+        
+    </ul>
+
+    <% if (nextPage !== null ) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; view older posts</a>
+    <% } %>
+
+</section>
